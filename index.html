@@ -1,196 +1,190 @@
 <!DOCTYPE html>
 
 <html>
-
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    
-    <img src="download.png" alt="Banner" width="1200" height="300">
+    <!-- style for tables -->
+    <style>
+        table {
+          font-family: arial,sans-serif;
+          border-collapse: collapse;
+          width: 30%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+
+        p.ex1 {
+          margin-left: 250px;
+        }
+
+        h3 {
+          text-decoration: underline;
+        }
+
+        body {
+          margin-left: 5em;
+          margin-top: 2em;
+        }
+
+    </style>
+  </head>
+ 
+  <body>
+   <img src="download.png" alt="Banner" width="1200" height="300">
       <h1><b>ENG0018 Computer Laboratory 2025/26</b><h1>
       <h2>Student URN: 6939507</h2>
     <hr>
-    <h2 style="font-family:calibri:"><b>Conference paper: Bridge Deck Repairs</b></h2>
+    <h2 style="font-family:calibri;"><b>Conference paper: Modelling and predicting stock prices</b></h2>
     <hr>
-    <!style for tables>
-        <style>
-          table {
-            font-family: arial,sans-serif;
-            border-collapse: collapse;
-            width: 30%;
-
-          }
-
-          td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px:
-          }
-
-          tr:nth-child(even) {
-            background-color: #dddddd;
-          }
-
-
-
-
-          </style>
-
-        <style>
-      p.ex1 {
-        margin-left: 250px;
-      }
-      </style>
-        </head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-.mySlides {dislpay:none;}
-</style>
-
-
-     
-        
-  <!table of contents>
+  <!--table of contents -->
   <table>
-
-  <tr>
-    <th><h3>Table of contents</h3></th>
-  </tr>
-  <tr>
-    <td><a href="#Abstract">Abstract</td>
-  </tr>
+    <tr>
+      <th><h3>Table of contents</h3></th>
+    </tr>
+    <tr>
+      <td><a href="#Abstract">Abstract</td>
+    </tr>
     <tr>
      <td><a href="#Introduction">Introduction</td>
     </tr>
     <tr>
-      <td><a href="#Analysis and discussion">Analysis and discussion</td>
+      <td><a href="#AnalysisandDiscussion">Analysis and discussion</td>
     </tr>
-
     <tr>
       <td><a href="#References">References</td>
     </tr>
   </table>
-
-<h3 id="Abstract">Abstract</h3>
   
-<p class="ex1">
-    BITCOIN blc nnnnnnnnn
+  <p class="ex1">
+      BITCOIN blc nnnnnnnnn
+  </p>
 
-</p>
+  <h3>Abstract</h3>
+    <section id="Abstract">
+      <p >
+          Abstract section
+      </p>
+  </section>
 
-<h3 id="Introduction">Introduction</h3>
-  
-<p>
-    try again and again
-</p>
+  <h3 >Introduction</h3>
+  <section id="Introduction">
+      <p >
+          Introduction section
+      </p>
+  </section>
 
-<h3 id="Analysis">Analysis</h3>
-  
-<p>
-    try again and again
-</p>
+  <h3 >Analysis and discussion</h3>
+  <section id="AnalysisandDiscussion">
+      <p>
+          text here
+      </p>
+      <img src="normal distribution.png" alt="Banner" width="500" height="320">
+  </section>
 
-<h3 id="References">References</h3>
-  
-<p>
-    try again and again
-</p>
+  <h3>References</h3>  
+  <section id="References">
+      <p>
+            StatMuse. (2025) Nvidia Stock Price Historical October 2025. StatMuse. 
+      </br>
+            Available at: 
+            <a href="https://www.statmuse.com/money/ask/nvidia-stock-price-historical-october-2025">https://www.statmuse.com/money/ask/nvidia-stock-price-historical-october-2025</a>
+      </p>
+  </section>
 
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-  
-<!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
-    <!-- Last commit time display -->
-<div id="last-updated">Loading last update time...</div>
-<!-- Verify Button -->
-<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
-    Verify Last Modified Time
-</button>
-<script>
-    async function getLastUpdatedTime() {
-        const username = 'calumquirk';
-        const repo = 'FEPFSYCQ00131';
-       
-        const url = `https://api.github.com/repos/${username}/${repo}/commits`;
-        try {
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                }
-            });
-            if (!response.ok) {
-                throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
-            }
-            const commits = await response.json();
-            if (commits && commits.length > 0) {
-                const lastCommitDate = new Date(commits[0].commit.committer.date);
-               
-                // Displaying the time on load
-                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
-            } else {
-                document.getElementById('last-updated').innerText = 'No commits found in the repository.';
-            }
-        } catch (error) {
-            console.error('Error fetching the last updated time:', error);
-            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
-        }
-    }
-    // Function to verify the last update time by re-fetching it from the API
-    async function verifyLastUpdatedTime() {
-        document.getElementById('last-updated').innerText = 'Verifying...';
-        await getLastUpdatedTime();
-        alert("Last modified time has been successfully verified from GitHub API.");
-    }
-    // Initial load to display the time on page load
-    window.onload = getLastUpdatedTime;
-</script>
+  <!-- Last commit time display -->
+  <div id="last-updated">Loading last update time...</div>
+  <!-- Verify Button -->
+  <button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
+      Verify Last Modified Time
+  </button>
+  <script>
+      async function getLastUpdatedTime() {
+          const username = 'calumquirk';
+          const repo = 'FEPFSYCQ00131';
+        
+          const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+          try {
+              const response = await fetch(url, {
+                  method: 'GET',
+                  headers: {
+                      'Accept': 'application/vnd.github.v3+json',
+                  }
+              });
+              if (!response.ok) {
+                  throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
+              }
+              const commits = await response.json();
+              if (commits && commits.length > 0) {
+                  const lastCommitDate = new Date(commits[0].commit.committer.date);
+                
+                  // Displaying the time on load
+                  document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+              } else {
+                  document.getElementById('last-updated').innerText = 'No commits found in the repository.';
+              }
+          } catch (error) {
+              console.error('Error fetching the last updated time:', error);
+              document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
+          }
+      }
+      // Function to verify the last update time by re-fetching it from the API
+      async function verifyLastUpdatedTime() {
+          document.getElementById('last-updated').innerText = 'Verifying...';
+          await getLastUpdatedTime();
+          alert("Last modified time has been successfully verified from GitHub API.");
+      }
+      // Initial load to display the time on page load
+      window.onload = getLastUpdatedTime;
+  </script>
 
-
- <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Word count function ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
-<!-- Placeholder for total word count -->
-<p id="totalWordCount"></p>
-<hr>
-<script>
-  // Function to calculate and display word count for a specified section
-  function displayWordCount(sectionId, outputId) {
-    // Get the text content from the specified section
-    const text = document.getElementById(sectionId).textContent;
-    // Split text into words based on spaces and filter out any empty strings
-    const wordArray = text.trim().split(/\s+/);
-    // Count the words
-    const wordCount = wordArray.length;
-    // Return the word count for summing purposes
-    return wordCount;
-  }
-  // Function to calculate and display total word count from selected sections
-  function displayTotalWordCount() {
-    // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
-    // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
-    // Display the total word count
-    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
-  }
-  // Run the function for specific sections and display total count when the page loads
-  window.onload = displayTotalWordCount;
-</script>
+  <!-- Placeholder for total word count -->
+  <p id="totalWordCount"></p>
+  <hr>
+  <script>
+    // Function to calculate and display word count for a specified section
+    function displayWordCount(sectionId, outputId) {
+      // Get the text content from the specified section
+      const text = document.getElementById(sectionId).textContent;
+      // Split text into words based on spaces and filter out any empty strings
+      const wordArray = text.trim().split(/\s+/);
+      // Count the words
+      const wordCount = wordArray.length;
+      // Return the word count for summing purposes
+      return wordCount;
+    }
+    // Function to calculate and display total word count from selected sections
+    function displayTotalWordCount() {
+      // Calculate word count for each section and accumulate the total
+      const AbstractCount = displayWordCount("Abstract");
+      const IntroductionCount = displayWordCount("Introduction");
+      const AnalysisCount = displayWordCount("AnalysisandDiscussion");
+      const ReferencesCount = displayWordCount("References");
+      // Calculate the sum of all selected sections
+      const totalWordCount = AbstractCount + IntroductionCount + AnalysisCount + ReferencesCount;
+      // Display the total word count
+      document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+    }
+    // Run the function for specific sections and display total count when the page loads
+    window.onload = displayTotalWordCount;
+  </script>
+</body>
+</html>
 
     
         
